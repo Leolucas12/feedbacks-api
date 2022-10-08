@@ -9,7 +9,7 @@ export class FeedbackController {
 
   @Get()
   async find(
-    @Query('email') email: string,
+    @Query('email') email?: string,
   ): Promise<Feedback[]> {
     return this.feedbackService.findAll(email);
   }
