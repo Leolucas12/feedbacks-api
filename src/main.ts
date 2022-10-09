@@ -9,6 +9,16 @@ async function bootstrap() {
     logger: ['log', 'debug', 'error', 'warn']
   });
 
+  app.enableCors({
+    allowedHeaders: "*",
+    origin: '*',
+    methods: "*",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    credentials: true,
+    exposedHeaders: ['*']
+  });
+
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
 
