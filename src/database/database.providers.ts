@@ -17,6 +17,9 @@ export const databaseProviders = [
           __dirname + '/../**/*.entity{.ts,.js}',
         ],
         synchronize: true,
+        ssl: {
+          rejectUnauthorized: false
+        }
       });
 
       return dataSource.initialize();
